@@ -1,0 +1,18 @@
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Model dan data hasil generate
+models/*.keras
+models/*.pkl
+models/*.npz
+
+# File sementara
+.DS_Store
+Thumbs.db

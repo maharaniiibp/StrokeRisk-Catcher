@@ -1,0 +1,18 @@
+HASIL EVALUASI DAN KOMPARASI MODEL
+=================================================================
+
+MLP
+Accuracy  : 0.8396
+Precision : 0.0582
+Recall    : 0.5169
+F1-Score  : 0.1046
+
+CNN 1D
+Accuracy  : 0.8014
+Precision : 0.0606
+Recall    : 0.6864
+F1-Score  : 0.1113
+
+=================================================================
+MODEL TERBAIK : CNN 1D
+ALASAN        : CNN 1D memiliki F1-Score lebih tinggi dibandingkan MLP.

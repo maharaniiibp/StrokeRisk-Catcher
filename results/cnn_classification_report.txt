@@ -1,0 +1,15 @@
+HASIL EVALUASI CNN 1D
+============================================================
+Accuracy  : 0.8014
+Precision : 0.0606
+Recall    : 0.6864
+F1 Score  : 0.1113
+
+              precision    recall  f1-score   support
+
+Tidak Stroke       0.99      0.80      0.89      6391
+      Stroke       0.06      0.69      0.11       118
+
+    accuracy                           0.80      6509
+   macro avg       0.53      0.74      0.50      6509
+weighted avg       0.98      0.80      0.87      6509
