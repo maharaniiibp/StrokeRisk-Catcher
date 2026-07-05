@@ -1,319 +1,449 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>
-        StrokeRisk-Catcher
-    </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STROKE RISK-CATCHER</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-
-
 <body>
 
-    <h1>
-        StrokeRisk-Catcher
-    </h1>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="#home" class="logo">STROKE RISK-CATCHER</a>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#prediction">Prediction</a></li>
+      <li><a href="#about">About Model</a></li>
+      <li><a href="#evaluation">Evaluation</a></li>
+    </ul>
+    <a href="#prediction" class="btn-primary">Get Started</a>
+  </nav>
 
-    <p>
-        Aplikasi Prediksi Awal Risiko Stroke
-        Menggunakan Model Deep Learning CNN 1D
-    </p>
+  <!-- HOME / HERO -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <span class="hero-label">Prediksi Awal Risiko Stroke dengan Deep Learning</span>
+      <h1>Solusi Cerdas untuk Deteksi Dini Risiko Stroke</h1>
+      <p>Sistem prediksi mutakhir yang memanfaatkan arsitektur CNN 1D Deep Learning untuk menganalisis parameter klinis dengan tingkat akurasi tinggi, membantu pencegahan stroke sebelum terlambat.</p>
+      <a href="#prediction" class="btn-primary">Mulai Prediksi →</a>
+    </div>
+    <div class="hero-visual">
+      <div class="visual-card">
+        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="10" width="180" height="100" rx="8" fill="#1E4FD8" opacity="0.1"/>
+          <path d="M20 80 L50 60 L70 90 L100 40 L130 70 L160 30 L180 55"
+                stroke="#1E4FD8" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="100" cy="40" r="5" fill="#1E4FD8"/>
+        </svg>
+      </div>
+    </div>
+  </section>
 
+  <!-- PROCESS STEPS -->
+  <section class="process-steps">
+    <div class="step-card">
+      <div class="step-icon">📥</div>
+      <h3>Input Data</h3>
+      <p>Masukkan parameter klinis pasien secara akurat.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-icon">⚙️</div>
+      <h3>Preprocessing</h3>
+      <p>Pembersihan & normalisasi data otomatis.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-icon">🧠</div>
+      <h3>CNN 1D Model</h3>
+      <p>Analisis deep learning mendalam secara real-time.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-icon">📊</div>
+      <h3>Hasil Prediksi</h3>
+      <p>Estimasi risiko akurat dengan rekomendasi.</p>
+    </div>
+  </section>
 
-    <hr>
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <h2>Siap mengetahui risiko stroke Anda?</h2>
+    <p>Lakukan screening sekarang juga untuk mendapatkan gambaran kesehatan Anda. Proses cepat, aman, dan didukung oleh kecerdasan buatan.</p>
+    <a href="#prediction" class="btn-secondary">Mulai Sekarang</a>
+  </section>
 
+  <!-- PREDICTION -->
+  <section class="prediction-section" id="prediction">
+    <div class="prediction-card">
+      <h2>Kalkulator Risiko Stroke</h2>
+      <p>Lengkapi data di bawah ini untuk memulai analisis prediktif dengan sistem cerdas berbasis AI.</p>
 
-    <form method="POST">
+      <form method="POST" action="/">
+        <div class="form-columns">
+          <div class="form-column">
+            <h3>👤 Data Pribadi</h3>
 
+            <div class="form-group">
+              <label>Jenis Kelamin</label>
+              <select name="gender" required>
+                <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                <option value="Male">Laki-laki</option>
+                <option value="Female">Perempuan</option>
+              </select>
+            </div>
 
-        <label>
-            Jenis Kelamin
-        </label>
+            <div class="form-group">
+              <label>Usia</label>
+              <input type="number" name="age" placeholder="Contoh: 45" step="0.1" required>
+            </div>
 
-        <select
-            name="gender"
-            required
-        >
+            <div class="form-group">
+              <label>Status Pernikahan</label>
+              <select name="ever_married" required>
+                <option value="" disabled selected>Pilih Status</option>
+                <option value="Yes">Pernah Menikah</option>
+                <option value="No">Belum Menikah</option>
+              </select>
+            </div>
 
-            <option value="Male">
-                Laki-laki
-            </option>
+            <div class="form-group">
+              <label>Jenis Pekerjaan</label>
+              <select name="work_type" required>
+                <option value="" disabled selected>Pilih Pekerjaan</option>
+                <option value="Private">Swasta</option>
+                <option value="Self-employed">Wiraswasta</option>
+                <option value="Govt_job">Pegawai Pemerintah</option>
+                <option value="children">Anak-anak</option>
+                <option value="Never_worked">Belum Pernah Bekerja</option>
+              </select>
+            </div>
 
-            <option value="Female">
-                Perempuan
-            </option>
+            <div class="form-group">
+              <label>Tipe Tempat Tinggal</label>
+              <select name="Residence_type" required>
+                <option value="" disabled selected>Pilih Tipe</option>
+                <option value="Urban">Perkotaan</option>
+                <option value="Rural">Pedesaan</option>
+              </select>
+            </div>
+          </div>
 
-        </select>
+          <div class="form-column">
+            <h3>🏥 Data Klinis</h3>
 
+            <div class="form-group">
+              <label>Hipertensi</label>
+              <select name="hypertension" required>
+                <option value="" disabled selected>Riwayat Hipertensi?</option>
+                <option value="0">Tidak Ada</option>
+                <option value="1">Ada</option>
+              </select>
+            </div>
 
+            <div class="form-group">
+              <label>Penyakit Jantung</label>
+              <select name="heart_disease" required>
+                <option value="" disabled selected>Riwayat Penyakit Jantung?</option>
+                <option value="0">Tidak Ada</option>
+                <option value="1">Ada</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Status Merokok</label>
+              <select name="smoking_status" required>
+                <option value="" disabled selected>Frekuensi Merokok</option>
+                <option value="never smoked">Tidak Pernah</option>
+                <option value="formerly smoked">Mantan Perokok</option>
+                <option value="smokes">Perokok Aktif</option>
+                <option value="Unknown">Tidak Diketahui</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Kadar Glukosa Rata-rata (mg/dL)</label>
+              <input type="number" name="avg_glucose_level" placeholder="Contoh: 105.5" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+              <label>Indeks Massa Tubuh (BMI)</label>
+              <input type="number" name="bmi" placeholder="Contoh: 24.3" step="0.1" required>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">🖩 Prediksi Risiko Stroke</button>
+      </form>
+
+      {% if error %}
+        <div class="error-box">
+          <strong>Terjadi kesalahan:</strong> {{ error }}
+        </div>
+      {% endif %}
+
+      {% if result %}
+        <div class="result-card {% if probability >= 50 %}risk-high{% else %}risk-low{% endif %}">
+          <div class="result-score">
+            <div class="label">Hasil Analisis Model</div>
+            <div class="value">{{ probability }}%</div>
+            {% if probability >= 50 %}
+              <span class="result-badge high">Risiko Tinggi</span>
+            {% else %}
+              <span class="result-badge low">Risiko Rendah</span>
+            {% endif %}
+          </div>
+          <div class="result-text">
+            <h4>{{ result }}</h4>
+            <p>
+              {% if probability >= 50 %}
+                Segera konsultasikan dengan dokter spesialis saraf untuk pemeriksaan lebih lanjut dan penanganan yang tepat.
+              {% else %}
+                Tetap jaga pola makan sehat dan rutin berolahraga untuk menjaga kesehatan kardiovaskular Anda.
+              {% endif %}
+            </p>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="disclaimer">
+        ℹ️ Hasil ini dihasilkan oleh algoritma machine learning dan ditujukan hanya untuk tujuan informasi. Hasil ini bukan merupakan diagnosis medis profesional. Konsultasikan dengan dokter spesialis saraf Anda untuk interpretasi lebih lanjut.
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT MODEL -->
+  <section class="about-section" id="about">
+    <div class="info-container">
+      <h2>Mengapa CNN 1D?</h2>
+      <p class="section-sub">Model ini menggunakan arsitektur Convolutional Neural Network 1-Dimensi untuk menangkap pola dan korelasi antar parameter klinis pasien.</p>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">✅</div>
+          <h3>Ekstraksi Fitur Otomatis</h3>
+          <p>Menangkap korelasi antar variabel klinis tanpa perlu rekayasa fitur manual.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Robust terhadap Noise</h3>
+          <p>Lebih stabil terhadap variasi data pasien dan mengurangi dampak outlier.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>Recall Tinggi</h3>
+          <p>Dioptimalkan untuk meminimalkan kasus stroke positif yang terlewat.</p>
+        </div>
+      </div>
+
+      <div class="arch-note">
+        <strong>Arsitektur:</strong> 1D Convolution + Batch Normalization + Dropout, diikuti Global Max Pooling dan Fully Connected Layer dengan aktivasi sigmoid untuk klasifikasi biner.
         <br><br>
-
-
-        <label>
-            Usia
-        </label>
-
-        <input
-            type="number"
-            name="age"
-            min="0"
-            max="120"
-            step="0.1"
-            required
-        >
-
-
-        <br><br>
-
-
-        <label>
-            Hipertensi
-        </label>
-
-        <select
-            name="hypertension"
-            required
-        >
-
-            <option value="0">
-                Tidak
-            </option>
-
-            <option value="1">
-                Ya
-            </option>
-
-        </select>
-
-
-        <br><br>
-
-
-        <label>
-            Penyakit Jantung
-        </label>
-
-        <select
-            name="heart_disease"
-            required
-        >
-
-            <option value="0">
-                Tidak
-            </option>
-
-            <option value="1">
-                Ya
-            </option>
-
-        </select>
-
-
-        <br><br>
-
-
-        <label>
-            Status Pernikahan
-        </label>
-
-        <select
-            name="ever_married"
-            required
-        >
-
-            <option value="No">
-                Belum Pernah Menikah
-            </option>
-
-            <option value="Yes">
-                Pernah Menikah
-            </option>
-
-        </select>
-
-
-        <br><br>
-
-
-        <label>
-            Jenis Pekerjaan
-        </label>
-
-        <select
-            name="work_type"
-            required
-        >
-
-            <option value="Private">
-                Private
-            </option>
-
-            <option value="Self-employed">
-                Self-employed
-            </option>
-
-            <option value="Govt_job">
-                Govt Job
-            </option>
-
-            <option value="children">
-                Children
-            </option>
-
-            <option value="Never_worked">
-                Never Worked
-            </option>
-
-        </select>
-
-
-        <br><br>
-
-
-        <label>
-            Tipe Tempat Tinggal
-        </label>
-
-        <select
-            name="Residence_type"
-            required
-        >
-
-            <option value="Urban">
-                Urban
-            </option>
-
-            <option value="Rural">
-                Rural
-            </option>
-
-        </select>
-
-
-        <br><br>
-
-
-        <label>
-            Rata-rata Kadar Glukosa
-        </label>
-
-        <input
-            type="number"
-            name="avg_glucose_level"
-            min="0"
-            step="0.01"
-            required
-        >
-
-
-        <br><br>
-
-
-        <label>
-            BMI
-        </label>
-
-        <input
-            type="number"
-            name="bmi"
-            min="0"
-            step="0.01"
-            required
-        >
-
-
-        <br><br>
-
-
-        <label>
-            Status Merokok
-        </label>
-
-        <select
-            name="smoking_status"
-            required
-        >
-
-            <option value="never smoked">
-                Tidak Pernah Merokok
-            </option>
-
-            <option value="formerly smoked">
-                Pernah Merokok
-            </option>
-
-            <option value="smokes">
-                Merokok
-            </option>
-
-            <option value="Unknown">
-                Tidak Diketahui
-            </option>
-
-        </select>
-
-
-        <br><br>
-
-
-        <button type="submit">
-            Prediksi Risiko Stroke
-        </button>
-
-
-    </form>
-
-
-    {% if result %}
-
-        <hr>
-
-        <h2>
-            Hasil Prediksi
-        </h2>
-
-        <h3>
-            {{ result }}
-        </h3>
-
-        <p>
-            Probabilitas prediksi kelas stroke:
-            <strong>
-                {{ probability }}%
-            </strong>
+        <em>Catatan: sesuaikan detail arsitektur di atas dengan struktur model kamu yang sebenarnya (jumlah layer, filter, dsb dari train_cnn.py).</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVALUATION -->
+  <section class="evaluation-section" id="evaluation">
+    <div class="info-container">
+      <h2>Evaluasi Model</h2>
+      <p class="section-sub">Metrik performa model CNN 1D berdasarkan data pengujian.</p>
+
+      <div class="metric-grid">
+        <div class="metric-card">
+          <span class="metric-label">Accuracy</span>
+          <span class="metric-value">80.14%</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Recall (Sensitivity)</span>
+          <span class="metric-value">68.64%</span>
+        </div>
+        <div class="metric-card metric-warn">
+          <span class="metric-label">Precision</span>
+          <span class="metric-value">6.06%</span>
+        </div>
+        <div class="metric-card metric-warn">
+          <span class="metric-label">F1-Score</span>
+          <span class="metric-value">11.13%</span>
+        </div>
+      </div>
+
+      <div class="note-box">
+        ℹ️ Nilai Precision dan F1-Score yang rendah disebabkan oleh ketidakseimbangan kelas (class imbalance) pada dataset klinis stroke. Model sengaja dioptimalkan untuk Recall guna memastikan deteksi dini kasus stroke dilakukan semaksimal mungkin.
+      </div>
+
+      <p class="arch-note-small">
+        <em>Catatan: angka di atas diambil dari hasil evaluasi yang kamu tunjukkan sebelumnya — cek ulang ke <code>results/model_comparison_report.txt</code> untuk memastikan angkanya masih sesuai dengan model terbaru.</em>
+      </p>
+    </div>
+  </section>
+
+<!-- ABOUT MODEL -->
+  <section class="about-section" id="about">
+    <div class="section-header">
+      <h2>Mengapa CNN 1D?</h2>
+      <p>Penelitian kami membandingkan arsitektur Multi Layer Perceptron (MLP) konvensional dengan Convolutional Neural Network 1-Dimensi (CNN 1D) untuk mengidentifikasi pola pada data klinis stroke.</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">✓</div>
+        <h3>Ekstraksi Fitur Otomatis</h3>
+        <p>CNN 1D secara cerdas menangkap korelasi antar fitur klinis tanpa memerlukan rekayasa fitur manual.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛡</div>
+        <h3>Robust terhadap Noise</h3>
+        <p>Menangani variasi data pasien yang beragam dengan stabilitas lebih tinggi.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>Recall Lebih Tinggi</h3>
+        <p>Menunjukkan angka Recall yang lebih tinggi dibandingkan MLP, krusial untuk deteksi dini kasus stroke.</p>
+      </div>
+    </div>
+
+    <div class="architecture-box">
+      <h3>Arsitektur Teroptimasi</h3>
+      <p>Visualisasi lapisan CNN 1D yang dirancang khusus untuk data tabular medis, dengan Batch Normalization dan Dropout untuk regularisasi.</p>
+      <div class="architecture-diagram">
+        <svg width="600" height="120" viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg">
+          <g font-family="sans-serif" font-size="11" fill="#1A1F36">
+            <rect x="10" y="30" width="70" height="60" rx="6" fill="#EEF3FC" stroke="#1E4FD8"/>
+            <text x="45" y="65" text-anchor="middle">Input</text>
+            <rect x="110" y="20" width="80" height="80" rx="6" fill="#1E4FD8" opacity="0.15" stroke="#1E4FD8"/>
+            <text x="150" y="65" text-anchor="middle">Conv1D 64</text>
+            <rect x="220" y="30" width="70" height="60" rx="6" fill="#EEF3FC" stroke="#1E4FD8"/>
+            <text x="255" y="65" text-anchor="middle">Pooling</text>
+            <rect x="320" y="20" width="80" height="80" rx="6" fill="#1E4FD8" opacity="0.15" stroke="#1E4FD8"/>
+            <text x="360" y="65" text-anchor="middle">Conv1D 32</text>
+            <rect x="430" y="30" width="70" height="60" rx="6" fill="#EEF3FC" stroke="#1E4FD8"/>
+            <text x="465" y="60" text-anchor="middle">Dense</text>
+            <text x="465" y="72" text-anchor="middle">Output</text>
+            <line x1="80" y1="60" x2="110" y2="60" stroke="#1E4FD8" stroke-width="2"/>
+            <line x1="190" y1="60" x2="220" y2="60" stroke="#1E4FD8" stroke-width="2"/>
+            <line x1="290" y1="60" x2="320" y2="60" stroke="#1E4FD8" stroke-width="2"/>
+            <line x1="400" y1="60" x2="430" y2="60" stroke="#1E4FD8" stroke-width="2"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <h3 style="text-align:center; margin-bottom: 6px;">Perbandingan Metrik Evaluasi</h3>
+    <p style="text-align:center; color: var(--text-gray); font-size: 0.85rem; margin-bottom: 20px;">Hasil pengujian model pada data testing (6.509 data)</p>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Metrik Pengujian</th>
+          <th>Multi-Layer Perceptron (MLP)</th>
+          <th>CNN 1D (StrokeRisk AI)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Accuracy</td>
+          <td>83.25%</td>
+          <td class="highlight">80.15%</td>
+        </tr>
+        <tr>
+          <td>Recall (Sensitivity)</td>
+          <td>55.93%</td>
+          <td class="highlight">59.32%</td>
+        </tr>
+        <tr>
+          <td>Precision</td>
+          <td>5.98%</td>
+          <td class="highlight">5.33%</td>
+        </tr>
+        <tr>
+          <td>F1-Score</td>
+          <td>10.80%</td>
+          <td class="highlight">9.78%</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- EVALUATION -->
+  <section class="evaluation-section" id="evaluation">
+    <div class="section-header">
+      <h2>Evaluasi Model</h2>
+      <p>Metrik performa model CNN 1D berdasarkan data pengujian.</p>
+    </div>
+
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="label">Accuracy</div>
+        <div class="value">80.15%</div>
+        <div class="metric-bar"><span style="width: 80%;"></span></div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Recall (Sensitivity)</div>
+        <div class="value">59.32%</div>
+        <div class="metric-bar"><span style="width: 59%;"></span></div>
+      </div>
+      <div class="metric-card warning">
+        <div class="label">Precision</div>
+        <div class="value">5.33%</div>
+        <div class="metric-bar"><span style="width: 5%;"></span></div>
+      </div>
+      <div class="metric-card warning">
+        <div class="label">F1-Score</div>
+        <div class="value">9.78%</div>
+        <div class="metric-bar"><span style="width: 10%;"></span></div>
+      </div>
+    </div>
+
+    <div class="info-banner">
+      ℹ️ <span>Nilai Precision dan F1-Score yang rendah disebabkan oleh ketidakseimbangan kelas (class imbalance) pada dataset klinis stroke. Model secara sengaja dioptimalkan untuk Recall (Sensitivity) guna memastikan deteksi dini kasus stroke dilakukan semaksimal mungkin tanpa melewatkan kasus positif.</span>
+    </div>
+
+    <div class="eval-columns">
+      <div class="eval-card">
+        <h3>Confusion Matrix</h3>
+        <p style="font-size:0.8rem; color:var(--text-gray); margin-bottom: 8px;">Testing Dataset</p>
+        <div class="confusion-grid">
+          <div class="confusion-cell tp">
+            <div class="num">TP</div>
+            <div class="desc">True Positives</div>
+          </div>
+          <div class="confusion-cell fp">
+            <div class="num">FP</div>
+            <div class="desc">False Positives</div>
+          </div>
+          <div class="confusion-cell fn">
+            <div class="num">FN</div>
+            <div class="desc">False Negatives</div>
+          </div>
+          <div class="confusion-cell tn">
+            <div class="num">TN</div>
+            <div class="desc">True Negatives</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="eval-card">
+        <h3>Spesifikasi Model</h3>
+        <p style="font-size:0.85rem; color:var(--text-gray); margin-top:12px;">
+          <strong>Arsitektur:</strong> Deep Learning 1D CNN dengan Batch Normalization dan Dropout layers untuk regularisasi.<br><br>
+          <strong>Dataset:</strong> Cerebral Stroke Prediction (43.400 data awal), mencakup parameter klinis: umur, hipertensi, penyakit jantung, status merokok, dan kadar glukosa.<br><br>
+          <strong>Optimasi:</strong> Binary Cross-Entropy Loss dengan Adam Optimizer. Early Stopping diterapkan untuk mencegah overfitting.
         </p>
+      </div>
+    </div>
+  </section>
 
-        <p>
-            Hasil ini merupakan prediksi awal
-            berdasarkan model Deep Learning
-            dan bukan diagnosis medis.
-        </p>
-
-    {% endif %}
-
-
-    {% if error %}
-
-        <hr>
-
-        <h3>
-            Terjadi Kesalahan
-        </h3>
-
-        <p>
-            {{ error }}
-        </p>
-
-    {% endif %}
-
+  
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>STROKE RISK-CATCHER</span>
+    <ul class="footer-links">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Service</a></li>
+      <li><a href="#">Contact Support</a></li>
+    </ul>
+    <span>© 2024 STROKE RISK-CATCHER. All rights reserved.</span>
+  </footer>
 
 </body>
-
 </html>
