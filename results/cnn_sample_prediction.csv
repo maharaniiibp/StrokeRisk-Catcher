@@ -1,0 +1,11 @@
+No,Label Aktual,Prediksi Model,Probabilitas Stroke,Status
+1,Tidak Stroke,Tidak Stroke,0.0022,Benar
+2,Tidak Stroke,Tidak Stroke,0.0,Benar
+3,Tidak Stroke,Tidak Stroke,1e-04,Benar
+4,Tidak Stroke,Tidak Stroke,0.0003,Benar
+5,Tidak Stroke,Tidak Stroke,0.4619,Benar
+6,Tidak Stroke,Tidak Stroke,0.0,Benar
+7,Tidak Stroke,Tidak Stroke,0.0,Benar
+8,Tidak Stroke,Tidak Stroke,0.0,Benar
+9,Tidak Stroke,Stroke,0.6582,Salah
+10,Tidak Stroke,Tidak Stroke,0.0,Benar
