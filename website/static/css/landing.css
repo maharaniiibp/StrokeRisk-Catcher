@@ -1,0 +1,1615 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Inter", sans-serif;
+
+    background: #faf8ff;
+
+    color: #191b23;
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+img {
+    display: block;
+
+    max-width: 100%;
+}
+
+
+section {
+    scroll-margin-top: 80px;
+}
+
+
+.material-symbols-outlined {
+
+    font-variation-settings:
+
+        "FILL" 0,
+
+        "wght" 400,
+
+        "GRAD" 0,
+
+        "opsz" 24;
+
+}
+
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+.container {
+
+    width: min(1280px, calc(100% - 48px));
+
+    margin-inline: auto;
+
+}
+
+
+.section {
+
+    padding: 80px 0;
+
+    background: #faf8ff;
+
+}
+
+
+.section-light {
+
+    background: #f3f2fe;
+
+}
+
+
+.section-header {
+
+    max-width: 800px;
+
+    margin: 0 auto 48px;
+
+    text-align: center;
+
+}
+
+
+.section-label {
+
+    display: inline-block;
+
+    color: #2455d9;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+
+    margin-bottom: 10px;
+
+}
+
+
+.section-header h2,
+.prevention-content h2,
+.awareness-content h2 {
+
+    font-size: 32px;
+
+    line-height: 1.25;
+
+    margin-bottom: 16px;
+
+}
+
+
+.section-header p,
+.awareness-description {
+
+    color: #5f6372;
+
+    font-size: 16px;
+
+}
+
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 10px;
+
+    font-weight: 700;
+
+    transition:
+
+        transform 0.2s ease,
+
+        box-shadow 0.2s ease,
+
+        background 0.2s ease;
+
+}
+
+
+.button:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+.button-primary {
+
+    background: #2455d9;
+
+    color: white;
+
+}
+
+
+.button-primary:hover {
+
+    background: #1948c7;
+
+    box-shadow: 0 10px 25px rgba(36, 85, 217, 0.2);
+
+}
+
+
+.button-secondary {
+
+    background: #e8e7f2;
+
+    color: #2455d9;
+
+    border: 1px solid #c4c5d7;
+
+}
+
+
+.button-large {
+
+    padding: 15px 26px;
+
+}
+
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid #e2e1ed;
+
+    transition: box-shadow 0.2s ease;
+
+}
+
+
+.navbar.scrolled {
+
+    box-shadow: 0 5px 20px rgba(25, 27, 35, 0.08);
+
+}
+
+
+.navbar-container {
+
+    width: min(1280px, calc(100% - 48px));
+
+    min-height: 74px;
+
+    margin-inline: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 24px;
+
+}
+
+
+.navbar-logo {
+
+    color: #2455d9;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+}
+
+
+.navbar-menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+
+.nav-link {
+
+    position: relative;
+
+    color: #555967;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    padding: 27px 0 23px;
+
+    transition: color 0.2s ease;
+
+}
+
+
+.nav-link:hover,
+.nav-link.active {
+
+    color: #2455d9;
+
+}
+
+
+.nav-link.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 17px;
+
+    height: 2px;
+
+    background: #2455d9;
+
+}
+
+
+.navbar-button {
+
+    padding: 11px 22px;
+
+    white-space: nowrap;
+
+}
+
+
+.mobile-menu-button {
+
+    display: none;
+
+    background: none;
+
+    border: 0;
+
+    color: #2455d9;
+
+    cursor: pointer;
+
+}
+
+
+.mobile-menu {
+
+    display: none;
+
+}
+
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+
+    padding: 80px 0;
+
+    background: #faf8ff;
+
+}
+
+
+.hero-container {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 64px;
+
+    align-items: center;
+
+}
+
+
+.hero-content {
+
+    max-width: 620px;
+
+}
+
+
+.hero-badge {
+
+    width: fit-content;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 7px 14px;
+
+    margin-bottom: 28px;
+
+    border-radius: 999px;
+
+    background: #dde3ee;
+
+    border: 1px solid rgba(36, 85, 217, 0.2);
+
+    color: #5e656e;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.badge-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    background: #2455d9;
+
+    border-radius: 50%;
+
+}
+
+
+.hero-title {
+
+    font-size: clamp(40px, 5vw, 62px);
+
+    line-height: 1.12;
+
+    letter-spacing: -0.04em;
+
+    margin-bottom: 24px;
+
+}
+
+
+.hero-title span {
+
+    color: #2455d9;
+
+}
+
+
+.hero-description {
+
+    max-width: 590px;
+
+    color: #5f6372;
+
+    font-size: 18px;
+
+    margin-bottom: 34px;
+
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 16px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.hero-image-container {
+
+    position: relative;
+
+}
+
+
+.image-background {
+
+    position: absolute;
+
+    inset: -20px;
+
+    border-radius: 50%;
+
+    background: rgba(36, 85, 217, 0.06);
+
+    filter: blur(35px);
+
+}
+
+
+.hero-image {
+
+    position: relative;
+
+    width: 100%;
+
+    max-height: 500px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    box-shadow: 0 25px 60px rgba(25, 27, 35, 0.16);
+
+}
+
+
+
+/* =========================================================
+   STROKE TYPES
+========================================================= */
+
+.stroke-type-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+
+}
+
+
+.stroke-card {
+
+    padding: 38px;
+
+    background: white;
+
+    border: 1px solid #c4c5d7;
+
+    border-radius: 16px;
+
+    transition:
+
+        transform 0.2s ease,
+
+        box-shadow 0.2s ease;
+
+}
+
+
+.stroke-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 14px 35px rgba(25, 27, 35, 0.08);
+
+}
+
+
+.stroke-icon {
+
+    width: 56px;
+
+    height: 56px;
+
+    margin-bottom: 24px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.blue-icon {
+
+    color: #2455d9;
+
+    background: #dce1ff;
+
+}
+
+
+.red-icon {
+
+    color: #832d00;
+
+    background: #ffdbce;
+
+}
+
+
+.stroke-card h3 {
+
+    margin-bottom: 14px;
+
+    font-size: 22px;
+
+}
+
+
+.stroke-card p {
+
+    color: #5f6372;
+
+}
+
+
+
+/* =========================================================
+   FAST
+========================================================= */
+
+.fast-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 38px;
+
+}
+
+
+.fast-card {
+
+    overflow: hidden;
+
+    background: white;
+
+    border: 1px solid #c4c5d7;
+
+    border-radius: 14px;
+
+}
+
+
+.fast-letter {
+
+    padding: 10px;
+
+    background: #2455d9;
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+}
+
+
+.fast-content {
+
+    padding: 24px 20px;
+
+    text-align: center;
+
+}
+
+
+.fast-content h3 {
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.fast-content p {
+
+    color: #5f6372;
+
+    font-size: 14px;
+
+}
+
+
+.fast-card-emergency {
+
+    border-color: #ba1a1a;
+
+}
+
+
+.fast-letter-emergency {
+
+    background: #ba1a1a;
+
+}
+
+
+.fast-card-emergency h3 {
+
+    color: #ba1a1a;
+
+}
+
+
+.additional-symptoms {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+
+}
+
+
+.symptom-item {
+
+    padding: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    background: #e8e7f2;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+.symptom-item span {
+
+    color: #2455d9;
+
+}
+
+
+
+/* =========================================================
+   RISK FACTORS
+========================================================= */
+
+.risk-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr);
+
+    gap: 16px;
+
+}
+
+
+.risk-card {
+
+    min-height: 135px;
+
+    padding: 22px 12px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    text-align: center;
+
+    background: white;
+
+    border: 1px solid #c4c5d7;
+
+    border-radius: 14px;
+
+    transition:
+
+        transform 0.2s ease,
+
+        box-shadow 0.2s ease;
+
+}
+
+
+.risk-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 25px rgba(25, 27, 35, 0.08);
+
+}
+
+
+.risk-card span {
+
+    color: #2455d9;
+
+    font-size: 30px;
+
+}
+
+
+.risk-card h3 {
+
+    font-size: 14px;
+
+}
+
+
+
+/* =========================================================
+   PREVENTION
+========================================================= */
+
+.prevention-container {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 64px;
+
+    align-items: center;
+
+}
+
+
+.prevention-image {
+
+    width: 100%;
+
+    max-height: 600px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    box-shadow: 0 20px 50px rgba(25, 27, 35, 0.14);
+
+}
+
+
+.prevention-content h2 {
+
+    margin-bottom: 30px;
+
+}
+
+
+.prevention-list {
+
+    display: grid;
+
+    gap: 14px;
+
+}
+
+
+.prevention-item {
+
+    padding: 18px;
+
+    display: flex;
+
+    gap: 14px;
+
+    background: #f3f2fe;
+
+    border-radius: 12px;
+
+}
+
+
+.prevention-item > span {
+
+    color: #2455d9;
+
+    flex-shrink: 0;
+
+}
+
+
+.prevention-item h3 {
+
+    margin-bottom: 4px;
+
+    font-size: 15px;
+
+}
+
+
+.prevention-item p {
+
+    color: #5f6372;
+
+    font-size: 14px;
+
+}
+
+
+
+/* =========================================================
+   EMERGENCY
+========================================================= */
+
+.emergency-section {
+
+    padding: 52px 0;
+
+    background: #dde3ee;
+
+}
+
+
+.emergency-panel {
+
+    padding: 42px;
+
+    background: white;
+
+    border-left: 7px solid #ba1a1a;
+
+    border-radius: 16px;
+
+    box-shadow: 0 18px 45px rgba(25, 27, 35, 0.13);
+
+}
+
+
+.emergency-panel h2 {
+
+    margin-bottom: 34px;
+
+    font-size: 30px;
+
+}
+
+
+.emergency-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 28px;
+
+}
+
+
+.emergency-number {
+
+    width: 46px;
+
+    height: 46px;
+
+    margin-bottom: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    background: #ba1a1a;
+
+    border-radius: 50%;
+
+    font-weight: 800;
+
+}
+
+
+.emergency-item h3 {
+
+    margin-bottom: 8px;
+
+    font-size: 18px;
+
+}
+
+
+.emergency-item p {
+
+    color: #5f6372;
+
+    font-size: 14px;
+
+}
+
+
+
+/* =========================================================
+   AWARENESS
+========================================================= */
+
+.awareness-container {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 64px;
+
+    align-items: center;
+
+}
+
+
+.awareness-description {
+
+    margin-bottom: 28px;
+
+}
+
+
+.awareness-benefits {
+
+    display: grid;
+
+    gap: 16px;
+
+}
+
+
+.awareness-card {
+
+    padding: 20px;
+
+    display: flex;
+
+    gap: 16px;
+
+    background: #f3f2fe;
+
+    border: 1px solid #c4c5d7;
+
+    border-radius: 14px;
+
+}
+
+
+.awareness-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    background: #2455d9;
+
+    border-radius: 12px;
+
+}
+
+
+.awareness-card h3 {
+
+    margin-bottom: 5px;
+
+    font-size: 17px;
+
+}
+
+
+.awareness-card p {
+
+    color: #5f6372;
+
+    font-size: 14px;
+
+}
+
+
+.awareness-information {
+
+    padding: 34px;
+
+    background: #ededf8;
+
+    border: 1px solid #c4c5d7;
+
+    border-radius: 16px;
+
+}
+
+
+.awareness-information > h3 {
+
+    margin-bottom: 22px;
+
+}
+
+
+.information-card {
+
+    padding: 18px;
+
+    margin-top: 14px;
+
+    background: white;
+
+    border-radius: 10px;
+
+}
+
+
+.information-card strong {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #2455d9;
+
+    font-size: 20px;
+
+}
+
+
+.information-card p {
+
+    color: #5f6372;
+
+    font-size: 14px;
+
+}
+
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.final-cta-section {
+
+    padding: 72px 0;
+
+    background: #f3f2fe;
+
+}
+
+
+.final-cta {
+
+    padding: 64px 30px;
+
+    text-align: center;
+
+    color: white;
+
+    background: #2455d9;
+
+    border-radius: 16px;
+
+    box-shadow: 0 20px 50px rgba(36, 85, 217, 0.2);
+
+}
+
+
+.final-cta h2 {
+
+    font-size: 42px;
+
+    margin-bottom: 16px;
+
+}
+
+
+.final-cta p {
+
+    max-width: 720px;
+
+    margin: 0 auto 30px;
+
+    font-size: 17px;
+
+}
+
+
+.final-cta-button {
+
+    padding: 15px 32px;
+
+    color: #2455d9;
+
+    background: white;
+
+}
+
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    padding-top: 70px;
+
+    background: white;
+
+    border-top: 1px solid #e2e1ed;
+
+}
+
+
+.footer-grid {
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+
+    gap: 42px;
+
+    padding-bottom: 48px;
+
+}
+
+
+.footer-brand h3 {
+
+    color: #2455d9;
+
+    margin-bottom: 18px;
+
+}
+
+
+.footer-brand p,
+.footer-project p {
+
+    color: #5f6372;
+
+    font-size: 14px;
+
+}
+
+
+.footer-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.footer-column h4,
+.footer-project h4 {
+
+    margin-bottom: 8px;
+
+}
+
+
+.footer-column a {
+
+    color: #5f6372;
+
+    font-size: 14px;
+
+}
+
+
+.footer-column a:hover {
+
+    color: #2455d9;
+
+}
+
+
+.project-box {
+
+    padding: 18px;
+
+    background: #ededf8;
+
+    border: 1px solid #c4c5d7;
+
+    border-radius: 12px;
+
+}
+
+
+.project-box strong {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 12px;
+
+}
+
+
+.footer-bottom {
+
+    padding: 22px 0;
+
+    border-top: 1px solid #e2e1ed;
+
+    color: #5f6372;
+
+    font-size: 13px;
+
+}
+
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar-menu {
+
+        display: none;
+
+    }
+
+
+    .navbar-button {
+
+        margin-left: auto;
+
+    }
+
+
+    .mobile-menu-button {
+
+        display: block;
+
+    }
+
+
+    .mobile-menu.open {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 6px;
+
+        padding: 15px 24px 24px;
+
+        background: white;
+
+        border-top: 1px solid #e2e1ed;
+
+    }
+
+
+    .mobile-nav-link {
+
+        padding: 12px;
+
+        border-radius: 8px;
+
+        color: #555967;
+
+        font-weight: 600;
+
+    }
+
+
+    .mobile-nav-link:hover {
+
+        background: #f3f2fe;
+
+        color: #2455d9;
+
+    }
+
+
+    .mobile-prediction-button {
+
+        padding: 13px;
+
+        margin-top: 8px;
+
+    }
+
+
+    .hero-container,
+    .prevention-container,
+    .awareness-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .hero-image-container {
+
+        max-width: 720px;
+
+        margin-inline: auto;
+
+    }
+
+
+    .fast-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .additional-symptoms {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .risk-grid {
+
+        grid-template-columns: repeat(4, 1fr);
+
+    }
+
+
+    .emergency-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .container {
+
+        width: min(100% - 32px, 1280px);
+
+    }
+
+
+    .navbar-container {
+
+        width: calc(100% - 32px);
+
+        min-height: 66px;
+
+    }
+
+
+    .navbar-logo {
+
+        font-size: 14px;
+
+    }
+
+
+    .navbar-button {
+
+        display: none;
+
+    }
+
+
+    .section,
+    .hero-section {
+
+        padding: 60px 0;
+
+    }
+
+
+    .hero-container {
+
+        gap: 44px;
+
+    }
+
+
+    .hero-title {
+
+        font-size: 38px;
+
+    }
+
+
+    .hero-description {
+
+        font-size: 16px;
+
+    }
+
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+    }
+
+
+    .hero-buttons .button {
+
+        width: 100%;
+
+    }
+
+
+    .stroke-type-grid,
+    .fast-grid,
+    .additional-symptoms,
+    .risk-grid,
+    .emergency-grid,
+    .footer-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .section-header h2,
+    .prevention-content h2,
+    .awareness-content h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    .stroke-card {
+
+        padding: 28px;
+
+    }
+
+
+    .risk-card {
+
+        min-height: 110px;
+
+    }
+
+
+    .emergency-panel {
+
+        padding: 28px 22px;
+
+    }
+
+
+    .emergency-panel h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .final-cta {
+
+        padding: 48px 22px;
+
+    }
+
+
+    .final-cta h2 {
+
+        font-size: 31px;
+
+    }
+
+}

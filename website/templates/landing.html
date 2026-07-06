@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>STROKE RISK-CATCHER | Edukasi Stroke</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+        rel="stylesheet"
+    >
+
+    <!-- Landing CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/landing.css') }}"
+    >
+</head>
+
+
+<body>
+
+
+<!-- ====================================================== -->
+<!-- NAVBAR -->
+<!-- ====================================================== -->
+
+<nav class="navbar">
+
+    <div class="navbar-container">
+
+        <a href="#home" class="navbar-logo">
+            STROKE RISK-CATCHER
+        </a>
+
+
+        <div class="navbar-menu">
+
+            <a href="#home" class="nav-link active">
+                Home
+            </a>
+
+            <a href="#tentang-stroke" class="nav-link">
+                Tentang Stroke
+            </a>
+
+            <a href="#gejala" class="nav-link">
+                Gejala
+            </a>
+
+            <a href="#faktor-risiko" class="nav-link">
+                Faktor Risiko
+            </a>
+
+            <a href="#pencegahan" class="nav-link">
+                Pencegahan
+            </a>
+
+            <a href="#penanganan" class="nav-link">
+                Penanganan
+            </a>
+
+        </div>
+
+
+        <a
+            href="{{ url_for('index') }}"
+            class="button button-primary navbar-button"
+        >
+            Mulai Prediksi
+        </a>
+
+
+        <button class="mobile-menu-button" id="mobileMenuButton">
+
+            <span class="material-symbols-outlined">
+                menu
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <a href="#home" class="mobile-nav-link">
+            Home
+        </a>
+
+        <a href="#tentang-stroke" class="mobile-nav-link">
+            Tentang Stroke
+        </a>
+
+        <a href="#gejala" class="mobile-nav-link">
+            Gejala
+        </a>
+
+        <a href="#faktor-risiko" class="mobile-nav-link">
+            Faktor Risiko
+        </a>
+
+        <a href="#pencegahan" class="mobile-nav-link">
+            Pencegahan
+        </a>
+
+        <a href="#penanganan" class="mobile-nav-link">
+            Penanganan
+        </a>
+
+        <a
+            href="{{ url_for('index') }}"
+            class="button button-primary mobile-prediction-button"
+        >
+            Mulai Prediksi
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ====================================================== -->
+<!-- HERO -->
+<!-- ====================================================== -->
+
+<section id="home" class="hero-section">
+
+    <div class="container hero-container">
+
+
+        <div class="hero-content">
+
+
+            <div class="hero-badge">
+
+                <span class="badge-dot"></span>
+
+                Kenali Faktor Risiko Anda Hari Ini
+
+            </div>
+
+
+            <h1 class="hero-title">
+
+                Kenali
+
+                <span>
+                    Risiko Stroke
+                </span>
+
+                Sebelum Terlambat
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Deteksi dini faktor risiko stroke secara mandiri
+                untuk membantu Anda mengambil langkah preventif
+                yang tepat sebelum menjadi keadaan darurat medis.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+
+                <a
+                    href="{{ url_for('index') }}"
+                    class="button button-primary button-large"
+                >
+
+                    Mulai Prediksi Risiko
+
+                    <span class="material-symbols-outlined">
+                        arrow_forward
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#tentang-stroke"
+                    class="button button-secondary button-large"
+                >
+
+                    Pelajari Tentang Stroke
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="hero-image-container">
+
+            <div class="image-background"></div>
+
+            <img
+                src="{{ url_for('static', filename='images/hero-stroke.png') }}"
+                alt="Kepedulian keluarga terhadap kesehatan dan risiko stroke"
+                class="hero-image"
+            >
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ====================================================== -->
+<!-- TENTANG STROKE -->
+<!-- ====================================================== -->
+
+<section id="tentang-stroke" class="section section-light">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <span class="section-label">
+                MENGENAL STROKE
+            </span>
+
+
+            <h2>
+                Apa Itu Stroke?
+            </h2>
+
+
+            <p>
+
+                Stroke terjadi ketika pasokan darah ke otak terganggu
+                atau berkurang, sehingga jaringan otak tidak mendapatkan
+                oksigen dan nutrisi yang dibutuhkan.
+
+                Dalam hitungan menit, sel-sel otak dapat mulai mengalami
+                kerusakan.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="stroke-type-grid">
+
+
+            <article class="stroke-card">
+
+
+                <div class="stroke-icon blue-icon">
+
+                    <span class="material-symbols-outlined">
+                        block
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Stroke Iskemik
+                </h3>
+
+
+                <p>
+
+                    Stroke iskemik terjadi ketika pembuluh darah
+                    yang membawa darah menuju otak mengalami
+                    penyumbatan.
+
+                    Penyumbatan dapat disebabkan oleh gumpalan
+                    darah atau timbunan plak.
+
+                </p>
+
+
+            </article>
+
+
+
+            <article class="stroke-card">
+
+
+                <div class="stroke-icon red-icon">
+
+                    <span class="material-symbols-outlined">
+                        emergency
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Stroke Hemoragik
+                </h3>
+
+
+                <p>
+
+                    Stroke hemoragik terjadi ketika pembuluh darah
+                    di otak pecah sehingga menyebabkan perdarahan
+                    di dalam atau di sekitar jaringan otak.
+
+                </p>
+
+
+            </article>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ====================================================== -->
+<!-- GEJALA STROKE -->
+<!-- ====================================================== -->
+
+<section id="gejala" class="section">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <span class="section-label">
+                KENALI GEJALANYA
+            </span>
+
+
+            <h2>
+                Waspadai Tanda-Tanda Stroke
+            </h2>
+
+        </div>
+
+
+
+        <div class="fast-grid">
+
+
+            <article class="fast-card">
+
+                <div class="fast-letter">
+                    F
+                </div>
+
+
+                <div class="fast-content">
+
+                    <h3>
+                        Face Drooping
+                    </h3>
+
+
+                    <p>
+
+                        Wajah tampak terkulai atau tidak simetris
+                        ketika tersenyum.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="fast-card">
+
+                <div class="fast-letter">
+                    A
+                </div>
+
+
+                <div class="fast-content">
+
+                    <h3>
+                        Arm Weakness
+                    </h3>
+
+
+                    <p>
+
+                        Salah satu lengan terasa lemah atau sulit
+                        dipertahankan ketika diangkat.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="fast-card">
+
+                <div class="fast-letter">
+                    S
+                </div>
+
+
+                <div class="fast-content">
+
+                    <h3>
+                        Speech Difficulty
+                    </h3>
+
+
+                    <p>
+
+                        Bicara menjadi tidak jelas atau sulit
+                        memahami pembicaraan.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="fast-card fast-card-emergency">
+
+                <div class="fast-letter fast-letter-emergency">
+                    T
+                </div>
+
+
+                <div class="fast-content">
+
+                    <h3>
+                        Time to Call 119
+                    </h3>
+
+
+                    <p>
+
+                        Segera cari bantuan medis.
+                        Waktu sangat berharga dalam penanganan stroke.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+
+        <div class="additional-symptoms">
+
+
+            <div class="symptom-item">
+
+                <span class="material-symbols-outlined">
+                    visibility_off
+                </span>
+
+                Gangguan Penglihatan
+
+            </div>
+
+
+
+            <div class="symptom-item">
+
+                <span class="material-symbols-outlined">
+                    directions_walk
+                </span>
+
+                Hilang Keseimbangan
+
+            </div>
+
+
+
+            <div class="symptom-item">
+
+                <span class="material-symbols-outlined">
+                    psychology_alt
+                </span>
+
+                Sakit Kepala Hebat
+
+            </div>
+
+
+
+            <div class="symptom-item">
+
+                <span class="material-symbols-outlined">
+                    touch_app
+                </span>
+
+                Mati Rasa Tiba-tiba
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ====================================================== -->
+<!-- FAKTOR RISIKO -->
+<!-- ====================================================== -->
+
+<section id="faktor-risiko" class="section section-light">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <span class="section-label">
+                FAKTOR RISIKO
+            </span>
+
+
+            <h2>
+
+                Kenali Faktor yang Meningkatkan Risiko Stroke
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="risk-grid">
+
+
+            <div class="risk-card">
+
+                <span class="material-symbols-outlined">
+                    calendar_today
+                </span>
+
+                <h3>
+                    Usia
+                </h3>
+
+            </div>
+
+
+
+            <div class="risk-card">
+
+                <span class="material-symbols-outlined">
+                    heart_check
+                </span>
+
+                <h3>
+                    Hipertensi
+                </h3>
+
+            </div>
+
+
+
+            <div class="risk-card">
+
+                <span class="material-symbols-outlined">
+                    cardiology
+                </span>
+
+                <h3>
+                    Penyakit Jantung
+                </h3>
+
+            </div>
+
+
+
+            <div class="risk-card">
+
+                <span class="material-symbols-outlined">
+                    water_drop
+                </span>
+
+                <h3>
+                    Gula Darah
+                </h3>
+
+            </div>
+
+
+
+            <div class="risk-card">
+
+                <span class="material-symbols-outlined">
+                    monitor_weight
+                </span>
+
+                <h3>
+                    BMI
+                </h3>
+
+            </div>
+
+
+
+            <div class="risk-card">
+
+                <span class="material-symbols-outlined">
+                    smoking_rooms
+                </span>
+
+                <h3>
+                    Merokok
+                </h3>
+
+            </div>
+
+
+
+            <div class="risk-card">
+
+                <span class="material-symbols-outlined">
+                    fitness_center
+                </span>
+
+                <h3>
+                    Gaya Hidup
+                </h3>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ====================================================== -->
+<!-- PENCEGAHAN -->
+<!-- ====================================================== -->
+
+<section id="pencegahan" class="section">
+
+    <div class="container prevention-container">
+
+
+        <div class="prevention-image-container">
+
+            <img
+                src="{{ url_for('static', filename='images/prevention.png') }}"
+                alt="Aktivitas sehat untuk membantu mencegah risiko stroke"
+                class="prevention-image"
+            >
+
+        </div>
+
+
+
+        <div class="prevention-content">
+
+
+            <span class="section-label">
+                LANGKAH PENCEGAHAN
+            </span>
+
+
+            <h2>
+
+                Kurangi Risiko Stroke dengan Kebiasaan Sehat
+
+            </h2>
+
+
+
+            <div class="prevention-list">
+
+
+                <div class="prevention-item">
+
+                    <span class="material-symbols-outlined">
+                        check_circle
+                    </span>
+
+
+                    <div>
+
+                        <h3>
+                            Kontrol Tekanan Darah
+                        </h3>
+
+
+                        <p>
+
+                            Pantau tekanan darah secara rutin dan
+                            ikuti anjuran tenaga medis untuk menjaga
+                            tekanan darah tetap terkontrol.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="prevention-item">
+
+                    <span class="material-symbols-outlined">
+                        check_circle
+                    </span>
+
+
+                    <div>
+
+                        <h3>
+                            Aktivitas Fisik Rutin
+                        </h3>
+
+
+                        <p>
+
+                            Lakukan aktivitas fisik secara rutin
+                            sesuai kemampuan dan kondisi kesehatan.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="prevention-item">
+
+                    <span class="material-symbols-outlined">
+                        check_circle
+                    </span>
+
+
+                    <div>
+
+                        <h3>
+                            Pola Makan Sehat
+                        </h3>
+
+
+                        <p>
+
+                            Konsumsi makanan sehat dan seimbang
+                            serta batasi konsumsi garam berlebihan.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="prevention-item">
+
+                    <span class="material-symbols-outlined">
+                        check_circle
+                    </span>
+
+
+                    <div>
+
+                        <h3>
+                            Hindari Rokok
+                        </h3>
+
+
+                        <p>
+
+                            Berhenti merokok dapat membantu
+                            mengurangi risiko kerusakan pembuluh darah.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ====================================================== -->
+<!-- PENANGANAN DARURAT -->
+<!-- ====================================================== -->
+
+<section id="penanganan" class="emergency-section">
+
+    <div class="container">
+
+
+        <div class="emergency-panel">
+
+
+            <h2>
+
+                Apa yang Harus Dilakukan Jika Menemukan Gejala Stroke?
+
+            </h2>
+
+
+
+            <div class="emergency-grid">
+
+
+                <article class="emergency-item">
+
+                    <div class="emergency-number">
+                        1
+                    </div>
+
+
+                    <h3>
+                        Kenali Gejala
+                    </h3>
+
+
+                    <p>
+
+                        Gunakan metode FAST untuk mengenali
+                        tanda-tanda stroke dengan cepat.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="emergency-item">
+
+                    <div class="emergency-number">
+                        2
+                    </div>
+
+
+                    <h3>
+                        Catat Waktu
+                    </h3>
+
+
+                    <p>
+
+                        Catat waktu pertama kali gejala muncul
+                        untuk membantu proses penanganan medis.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="emergency-item">
+
+                    <div class="emergency-number">
+                        3
+                    </div>
+
+
+                    <h3>
+                        Cari Pertolongan Medis
+                    </h3>
+
+
+                    <p>
+
+                        Segera hubungi layanan darurat atau
+                        bawa pasien menuju fasilitas kesehatan.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="emergency-item">
+
+                    <div class="emergency-number">
+                        4
+                    </div>
+
+
+                    <h3>
+                        Jangan Menunggu
+                    </h3>
+
+
+                    <p>
+
+                        Jangan menunggu gejala membaik dengan
+                        sendirinya karena setiap waktu sangat berharga.
+
+                    </p>
+
+                </article>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ====================================================== -->
+<!-- KESADARAN STROKE -->
+<!-- ====================================================== -->
+
+<section class="section">
+
+    <div class="container awareness-container">
+
+
+        <div class="awareness-content">
+
+
+            <span class="section-label">
+
+                PENTINGNYA KESADARAN
+
+            </span>
+
+
+            <h2>
+
+                Mengapa Pencegahan dan Deteksi Dini Penting?
+
+            </h2>
+
+
+            <p class="awareness-description">
+
+                Mengenali faktor risiko dan gejala stroke membantu
+                meningkatkan kesadaran untuk menerapkan gaya hidup
+                sehat dan mencari pertolongan medis dengan cepat
+                ketika gejala muncul.
+
+            </p>
+
+
+
+            <div class="awareness-benefits">
+
+
+                <article class="awareness-card">
+
+
+                    <div class="awareness-icon">
+
+                        <span class="material-symbols-outlined">
+                            health_and_safety
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Mencegah Komplikasi
+                        </h3>
+
+
+                        <p>
+
+                            Pengelolaan faktor risiko membantu menjaga
+                            kesehatan jantung dan pembuluh darah.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <article class="awareness-card">
+
+
+                    <div class="awareness-icon">
+
+                        <span class="material-symbols-outlined">
+                            volunteer_activism
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Kualitas Hidup Lebih Baik
+                        </h3>
+
+
+                        <p>
+
+                            Kebiasaan hidup sehat membantu menjaga
+                            kesehatan dan kemandirian dalam jangka panjang.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="awareness-information">
+
+
+            <h3>
+                Hal yang Perlu Diingat
+            </h3>
+
+
+
+            <div class="information-card">
+
+                <strong>
+                    Kenali Risiko
+                </strong>
+
+
+                <p>
+
+                    Beberapa faktor risiko stroke dapat dikelola
+                    melalui perubahan gaya hidup dan pemeriksaan kesehatan.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="information-card">
+
+                <strong>
+                    Kenali Gejala
+                </strong>
+
+
+                <p>
+
+                    Metode FAST membantu masyarakat mengenali
+                    tanda utama stroke dengan lebih mudah.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="information-card">
+
+                <strong>
+                    Bertindak Cepat
+                </strong>
+
+
+                <p>
+
+                    Segera mencari pertolongan medis ketika gejala
+                    stroke muncul sangat penting untuk proses penanganan.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ====================================================== -->
+<!-- FINAL CTA -->
+<!-- ====================================================== -->
+
+<section class="final-cta-section">
+
+    <div class="container">
+
+
+        <div class="final-cta">
+
+
+            <h2>
+
+                Kenali Risiko Anda Hari Ini
+
+            </h2>
+
+
+            <p>
+
+                Setelah memahami gejala, faktor risiko, pencegahan,
+                dan langkah penanganan stroke, Anda dapat menggunakan
+                StrokeRisk-Catcher untuk memperoleh estimasi awal risiko stroke.
+
+            </p>
+
+
+            <a
+                href="{{ url_for('index') }}"
+                class="button final-cta-button"
+            >
+
+                Mulai Prediksi Sekarang
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ====================================================== -->
+<!-- FOOTER -->
+<!-- ====================================================== -->
+
+<footer class="footer">
+
+
+    <div class="container footer-grid">
+
+
+        <div class="footer-brand">
+
+
+            <h3>
+                STROKE RISK-CATCHER
+            </h3>
+
+
+            <p>
+
+                Website edukasi dan estimasi awal risiko stroke
+                untuk membantu meningkatkan kesadaran masyarakat
+                terhadap pencegahan stroke.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+
+            <h4>
+                Navigasi Cepat
+            </h4>
+
+
+            <a href="#home">
+                Beranda
+            </a>
+
+            <a href="#tentang-stroke">
+                Tentang Stroke
+            </a>
+
+            <a href="#gejala">
+                Gejala & FAST
+            </a>
+
+            <a href="#faktor-risiko">
+                Faktor Risiko
+            </a>
+
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+
+            <h4>
+                Sumber Daya
+            </h4>
+
+
+            <a href="#pencegahan">
+                Panduan Hidup Sehat
+            </a>
+
+            <a href="#penanganan">
+                Penanganan Darurat
+            </a>
+
+
+        </div>
+
+
+
+        <div class="footer-project">
+
+
+            <h4>
+                Informasi Proyek
+            </h4>
+
+
+            <div class="project-box">
+
+                <strong>
+                    PROYEK UAS
+                </strong>
+
+
+                <p>
+
+                    Pembelajaran Mesin Praktikum
+
+                    <br>
+
+                    Universitas Airlangga
+
+                    <br>
+
+                    Surabaya, 2026
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="container footer-bottom">
+
+        <p>
+
+            © 2026 STROKE RISK-CATCHER.
+            Developed for Academic Purposes.
+
+        </p>
+
+    </div>
+
+
+</footer>
+
+
+
+<script
+    src="{{ url_for('static', filename='js/landing.js') }}"
+></script>
+
+
+</body>
+</html>
