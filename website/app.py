@@ -1,11 +1,14 @@
 import os
 import joblib
-import numpy as np
 import pandas as pd
 
 from flask import Flask, render_template, request
 from tensorflow.keras.models import load_model
 
+
+# =====================================================
+# PATH PROJECT
+# =====================================================
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODEL_PATH = os.path.join(BASE_DIR, "models")
@@ -14,6 +17,10 @@ CNN_MODEL_PATH = os.path.join(MODEL_PATH, "cnn_model.keras")
 SCALER_PATH = os.path.join(MODEL_PATH, "scaler.pkl")
 ENCODER_PATH = os.path.join(MODEL_PATH, "label_encoders.pkl")
 
+
+# =====================================================
+# LOAD MODEL DAN PREPROCESSOR
+# =====================================================
 
 print("=" * 60)
 print("MEMUAT MODEL DAN PREPROCESSOR")
@@ -28,8 +35,16 @@ print("Scaler berhasil dimuat.")
 print("Label Encoder berhasil dimuat.")
 
 
+# =====================================================
+# FLASK APPLICATION
+# =====================================================
+
 app = Flask(__name__)
 
+
+# =====================================================
+# FEATURE COLUMNS
+# =====================================================
 
 FEATURE_COLUMNS = [
     "gender",
@@ -44,6 +59,10 @@ FEATURE_COLUMNS = [
     "smoking_status"
 ]
 
+
+# =====================================================
+# PREPROCESSING INPUT
+# =====================================================
 
 def preprocess_input(form_data):
 
@@ -65,7 +84,6 @@ def preprocess_input(form_data):
             input_data[column]
         )
 
-
     numeric_columns = [
         "age",
         "hypertension",
@@ -79,11 +97,13 @@ def preprocess_input(form_data):
             input_data[column]
         )
 
-
+    # Memastikan urutan fitur sama dengan saat training
     input_data = input_data[FEATURE_COLUMNS]
 
+    # Standardisasi menggunakan scaler hasil training
     input_scaled = scaler.transform(input_data)
 
+    # Mengubah bentuk data agar sesuai input CNN 1D
     input_cnn = input_scaled.reshape(
         input_scaled.shape[0],
         input_scaled.shape[1],
@@ -93,34 +113,32 @@ def preprocess_input(form_data):
     return input_cnn
 
 
-
 # =====================================================
 # LANDING PAGE
 # =====================================================
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def landing():
 
     return render_template("landing.html")
 
 
-
 # =====================================================
-# WEBSITE MACHINE LEARNING
+# WEBSITE MACHINE LEARNING / PREDICTION
 # =====================================================
 
 @app.route("/prediction", methods=["GET", "POST"])
-def index():
+def prediction():
 
     result = None
     probability = None
     error = None
 
-
     if request.method == "POST":
 
         try:
 
+            # Mengambil data dari form HTML
             form_data = {
 
                 "gender":
@@ -155,26 +173,26 @@ def index():
 
             }
 
-
+            # Preprocessing data
             input_cnn = preprocess_input(form_data)
 
-
-            prediction = model.predict(
+            # Melakukan prediksi menggunakan CNN 1D
+            prediction_result = model.predict(
                 input_cnn,
                 verbose=0
             )
 
-
+            # Mengambil probabilitas prediksi
             probability = float(
-                prediction[0][0]
+                prediction_result[0][0]
             )
 
-
+            # Threshold klasifikasi
             predicted_class = int(
                 probability >= 0.5
             )
 
-
+            # Menentukan hasil prediksi
             result = (
                 "Terindikasi Risiko Stroke"
                 if predicted_class == 1
@@ -182,17 +200,15 @@ def index():
                 "Tidak Terindikasi Risiko Stroke"
             )
 
-
+            # Mengubah probabilitas menjadi persen
             probability = round(
                 probability * 100,
                 2
             )
 
-
         except Exception as exception:
 
             error = str(exception)
-
 
     return render_template(
         "index.html",
@@ -200,7 +216,6 @@ def index():
         probability=probability,
         error=error
     )
-
 
 
 # =====================================================
