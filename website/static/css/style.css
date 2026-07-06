@@ -811,3 +811,13 @@ body {
 @media (max-width: 600px) {
   .feature-grid, .metric-grid { grid-template-columns: 1fr; }
 }
+
+.navbar .nav-links a {
+  position: relative;
+}
+
+.navbar .nav-links a.active {
+  border-bottom: 2px solid var(--primary-blue);
+  padding-bottom: 4px;
+  transition: all 0.2s ease;
+}

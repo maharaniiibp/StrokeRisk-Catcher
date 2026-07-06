@@ -210,72 +210,6 @@
     </div>
   </section>
 
-  <!-- ABOUT MODEL -->
-  <section class="about-section" id="about">
-    <div class="info-container">
-      <h2>Mengapa CNN 1D?</h2>
-      <p class="section-sub">Model ini menggunakan arsitektur Convolutional Neural Network 1-Dimensi untuk menangkap pola dan korelasi antar parameter klinis pasien.</p>
-
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="feature-icon">✅</div>
-          <h3>Ekstraksi Fitur Otomatis</h3>
-          <p>Menangkap korelasi antar variabel klinis tanpa perlu rekayasa fitur manual.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🛡️</div>
-          <h3>Robust terhadap Noise</h3>
-          <p>Lebih stabil terhadap variasi data pasien dan mengurangi dampak outlier.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📈</div>
-          <h3>Recall Tinggi</h3>
-          <p>Dioptimalkan untuk meminimalkan kasus stroke positif yang terlewat.</p>
-        </div>
-      </div>
-
-      <div class="arch-note">
-        <strong>Arsitektur:</strong> 1D Convolution + Batch Normalization + Dropout, diikuti Global Max Pooling dan Fully Connected Layer dengan aktivasi sigmoid untuk klasifikasi biner.
-        <br><br>
-        <em>Catatan: sesuaikan detail arsitektur di atas dengan struktur model kamu yang sebenarnya (jumlah layer, filter, dsb dari train_cnn.py).</em>
-      </div>
-    </div>
-  </section>
-
-  <!-- EVALUATION -->
-  <section class="evaluation-section" id="evaluation">
-    <div class="info-container">
-      <h2>Evaluasi Model</h2>
-      <p class="section-sub">Metrik performa model CNN 1D berdasarkan data pengujian.</p>
-
-      <div class="metric-grid">
-        <div class="metric-card">
-          <span class="metric-label">Accuracy</span>
-          <span class="metric-value">80.14%</span>
-        </div>
-        <div class="metric-card">
-          <span class="metric-label">Recall (Sensitivity)</span>
-          <span class="metric-value">68.64%</span>
-        </div>
-        <div class="metric-card metric-warn">
-          <span class="metric-label">Precision</span>
-          <span class="metric-value">6.06%</span>
-        </div>
-        <div class="metric-card metric-warn">
-          <span class="metric-label">F1-Score</span>
-          <span class="metric-value">11.13%</span>
-        </div>
-      </div>
-
-      <div class="note-box">
-        ℹ️ Nilai Precision dan F1-Score yang rendah disebabkan oleh ketidakseimbangan kelas (class imbalance) pada dataset klinis stroke. Model sengaja dioptimalkan untuk Recall guna memastikan deteksi dini kasus stroke dilakukan semaksimal mungkin.
-      </div>
-
-      <p class="arch-note-small">
-        <em>Catatan: angka di atas diambil dari hasil evaluasi yang kamu tunjukkan sebelumnya — cek ulang ke <code>results/model_comparison_report.txt</code> untuk memastikan angkanya masih sesuai dengan model terbaru.</em>
-      </p>
-    </div>
-  </section>
 
 <!-- ABOUT MODEL -->
   <section class="about-section" id="about">
@@ -445,5 +379,33 @@
     <span>© 2024 STROKE RISK-CATCHER. All rights reserved.</span>
   </footer>
 
+  <script>
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    function updateActiveNav() {
+      let currentSection = '';
+      const scrollPosition = window.scrollY + 120; // offset biar transisi lebih pas
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + currentSection) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveNav);
+    window.addEventListener('load', updateActiveNav);
+  </script>
 </body>
 </html>
